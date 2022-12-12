@@ -24,38 +24,38 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="fullName"><span class="font-semibold text-md">Full Name</span>
-                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="fullName">
+                        <label for="full_name"><span class="font-semibold text-md">Full Name</span>
+                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="full_name">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="name"><span class="font-semibold text-md">Middle Name</span>
+                        <label for="middle_name"><span class="font-semibold text-md">Middle Name</span>
                             <input type="text" placeholder="Enter your iddle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middleName">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="phone"><span class="font-semibold text-md">Last Name</span>
-                            <input id="phone" type="text" placeholder="Enter your Last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="lastName">
+                        <label for="last_name"><span class="font-semibold text-md">Last Name</span>
+                            <input id="last+name" type="text" placeholder="Enter your Last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
                         </label>
                     </div>
                     <div class="mt-5">
                         <label for="address"><span class="font-semibold text-md">Phone Number</span>
-                            <input id="address" type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phoneNumber">
+                            <input id="phone type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phone_number">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="address"><span class="font-semibold text-md">Birth Date</span>
-                            <input id="address" type="date" placeholder="Enter your hBirth Date" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="birthDate">
+                        <label for="birth_date"><span class="font-semibold text-md">Birth Date</span>
+                            <input id="birth_date" type="date" placeholder="Enter your hBirth Date" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="birth_date">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="address"><span class="font-semibold text-md">Place of Birth</span>
-                            <input id="address" type="text" placeholder="Enter your pplace of Birth" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="pob">
+                        <label for="place_of_birth"><span class="font-semibold text-md">Place of Birth</span>
+                            <input id="place_of_birth" type="text" placeholder="Enter your pplace of Birth" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="place_of_birth">
                         </label>
                     </div>
                     <div class="mt-5">
                         <label for="address"><span class="font-semibold text-md">Photo</span>
-                            <input id="address" type="file" placeholder="Enter your home address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="photo">
+                            <input id="photo" type="file" placeholder="Enter your home address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="photo">
                         </label>
                     </div>
                     <div class="mt-5">
@@ -70,12 +70,21 @@
                     </div>
                     <div class="mt-5">
                         <label for="address"><span class="font-semibold text-md">Blood Type</span>
-                            <input id="address" type="text" placeholder="Enter your blood type" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="blood-type">
+                            <input id="address" type="text" placeholder="Enter your blood type" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="blood_type">
                         </label>
                     </div>
                     <div class="mt-5">
                         <label for="address"><span class="font-semibold text-md">Address</span>
                             <input id="address" type="text" placeholder="Enter your Address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Address</span>
+                            <select name="role" id="cars">
+                                <option value="student">Student</option>
+                                <option value="lecture">Lecture</option>
+                                <option value="admin">Admin</option>
+                              </select>
                         </label>
                     </div>
 

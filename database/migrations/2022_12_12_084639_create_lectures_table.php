@@ -15,19 +15,6 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->string('fulll_name');
-            $table->string('middle_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->unique();
-            $table->string('phone_number')->unique();
-            $table->date('birth-date');
-            $table->string('place_of_birth');
-            $table->text('photo');
-            $table->integer('nik')->unique();
-            $table->string('sex');
-            $table->string('religion');
-            $table->string('blood-type');
-            $table->string('address');
             $table->string('country');
             $table->string('position');
             $table->string('rank');
