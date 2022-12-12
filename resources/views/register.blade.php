@@ -3,7 +3,7 @@
     <div class="container mx-auto font-poppins max-w-sm m-9 bg-[rgb(251,252,255)]  lg:max-w-4xl">
         <div class="rounded-lg lg:flex shadow-full lg:rounded-none lg:rounded-r-lg">
             <div class="hidden bg-[#3166AD] lg:inline lg:flex-1 lg:rounded-l-lg">
-                <h1 class="font-bold text-center text-white mt-7 lg:text-2xl lg:py-28">We help you to <br> manage your trash</h1>
+                <h1 class="font-bold text-center text-white mt-7 lg:text-2xl lg:py-28"></h1>
                 <img src="{{asset('images/login.png')}}" alt="" class="px-16">
             </div>
             <div class="px-10 py-6 lg:px-8 lg:flex-1">
@@ -19,23 +19,63 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="username"><span class="font-semibold text-md">Full Name</span>
-                            <input type="text" placeholder="Enter your username" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="username">
+                        <label for="username"><span class="font-semibold text-md">NIK</span>
+                            <input type="number" placeholder="Enter your NIK" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="nik">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="name"><span class="font-semibold text-md">Nama</span>
-                            <input type="text" placeholder="Enter your name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="name">
+                        <label for="fullName"><span class="font-semibold text-md">Full Name</span>
+                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="fullName">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="phone"><span class="font-semibold text-md">Nomor Telepon</span>
-                            <input id="phone" type="text" placeholder="Enter your phone number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="no_telp">
+                        <label for="name"><span class="font-semibold text-md">Middle Name</span>
+                            <input type="text" placeholder="Enter your iddle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middleName">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="address"><span class="font-semibold text-md">Alamat</span>
-                            <input id="address" type="text" placeholder="Enter your home address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="alamat">
+                        <label for="phone"><span class="font-semibold text-md">Last Name</span>
+                            <input id="phone" type="text" placeholder="Enter your Last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="lastName">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Phone Number</span>
+                            <input id="address" type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phoneNumber">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Birth Date</span>
+                            <input id="address" type="date" placeholder="Enter your hBirth Date" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="birthDate">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Place of Birth</span>
+                            <input id="address" type="text" placeholder="Enter your pplace of Birth" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="pob">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Photo</span>
+                            <input id="address" type="file" placeholder="Enter your home address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="photo">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Sex</span>
+                            <input id="address" type="text" placeholder="Enter your Sex" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="sex">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Religion</span>
+                            <input id="address" type="text" placeholder="Enter your Religion" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="religion">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Blood Type</span>
+                            <input id="address" type="text" placeholder="Enter your blood type" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="blood-type">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="address"><span class="font-semibold text-md">Address</span>
+                            <input id="address" type="text" placeholder="Enter your Address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="address">
                         </label>
                     </div>
 
