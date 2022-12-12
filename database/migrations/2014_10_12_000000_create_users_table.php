@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('staffs', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('fulll_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
@@ -29,14 +28,13 @@ return new class extends Migration
             $table->string('religion');
             $table->string('blood-type');
             $table->string('address');
-            $table->string('position');
-            $table->string('rank');
-            $table->string('class');
-            $table->string('functional');
-            $table->string('highest_edu');
-            $table->string('before_name_degree');
-            $table->string('after_name_degree');
-            $table->string('staff_unit');
+            $table->boolean('isStudent');
+            $table->boolean('isDosbing');
+            $table->boolean('isAdmin');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
@@ -47,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lectures');
+        Schema::dropIfExists('users');
     }
 };

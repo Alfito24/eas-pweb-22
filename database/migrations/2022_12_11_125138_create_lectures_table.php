@@ -38,6 +38,7 @@ return new class extends Migration
             $table->string('before_name_title');
             $table->string('after_name_title');
             $table->string('laboratorium');
+            $table->string('lecture_status');
             $table->timestamps();
         });
     }
