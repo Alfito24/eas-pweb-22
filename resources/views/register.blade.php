@@ -19,13 +19,13 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="middle_name"><span class="font-semibold text-md">Middle Name</span>
-                            <input type="text" placeholder="Enter your Middle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middle_name">
+                        <label for="username"><span class="font-semibold text-md">NIK</span>
+                            <input type="number" placeholder="Enter your NIK" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="nik">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="last_name"><span class="font-semibold text-md">Last Name</span>
-                            <input type="text" placeholder="Enter your last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
+                        <label for="full_name"><span class="font-semibold text-md">Full Name</span>
+                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="full_name">
                         </label>
                     </div>
                     <div class="mt-5">
@@ -36,6 +36,9 @@
                     <div class="mt-5">
                         <label for="phone_number"><span class="font-semibold text-md">Phone Number</span>
                             <input id="phone type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phone_number">
+                            @error('phone_number')
+                            <p class="text-red-500">{{$message}}</p>
+                            @enderror
                         </label>
                     </div>
                     <div class="mt-5">
@@ -125,6 +128,9 @@
                                 </div>
                             </div>
                         </label>
+                        @error('password')
+                        <p class="text-red-500">{{$message}}</p>
+                        @enderror
                     </div>
                     <button class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
                         Sign Up
