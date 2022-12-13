@@ -95,9 +95,10 @@ class RegisterController extends Controller
         $student->instagram_address = $request->instagram_address;
         $student->twitter_address = $request->twitter_address;
         $student->whatsapp_address = $request->whatsapp_address;
-            $user->student()->save($student);
-            $request->session()->forget('user');
-            }
+        $student->student_role = $request->student_role;
+        $user->student()->save($student);
+        $request->session()->forget('user');
+        }
 
             elseif($user->role == 'admin'){
             $user = $request->session()->get('user');
@@ -112,11 +113,9 @@ class RegisterController extends Controller
             $staff->after_name_degree = $request->after_name_degree;
             $staff->before_name_degree = $request->before_name_degree;
             $staff->staff_status = $request->staff_status;
-            $staff->staff_role = $request->staff_role;
             $user->staff()->save($staff);
             dd($staff);
             $request->session()->forget('user');
-
             }
 
             else{
@@ -129,14 +128,15 @@ class RegisterController extends Controller
                 $lecture->rank = $request->rank;
                 $lecture->class = $request->class;
                 $lecture->functional = $request->functional;
+                $lecture->nidn = $request->nidn;
                 $lecture->highest_education = $request->highest_education;
-                $lecture->before_name_degree = $request->before_name_degree;
-                $lecture->after_name_degree = $request->after_name_degree;
-                $lecture->laboratorium = $request->lecture_status;
+                $lecture->before_name_title = $request->before_name_title;
+                $lecture->after_name_title = $request->after_name_title;
+                $lecture->laboratorium = $request->laboratorium;
+                $lecture->lecture_status = $request->lecture_status;
+            $lecture->lecture_role = $request->lecture_role;
             $user->lecture()->save($lecture);
             $request->session()->forget('user');
             }
-
-
         }
 }

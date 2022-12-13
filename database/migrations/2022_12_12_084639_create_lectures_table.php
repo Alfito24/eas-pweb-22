@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('country');
-            $table->string('martial_status');
+            $table->string('marital_status');
             $table->string('position');
             $table->string('rank');
             $table->string('class');
@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('after_name_title');
             $table->string('laboratorium');
             $table->string('lecture_status');
+            $table->string('lecture_role');
             $table->timestamps();
         });
     }

@@ -10,8 +10,8 @@
                 <div class="flex justify-end">
                     <a href="/" class=""><i class="fa-solid fa-xmark"></i></a>
                 </div>
-                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Additional Data <br> Staff</h1>
-                <form action="/register" method="POST">
+                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Additional Data <br> Lecturer</h1>
+                <form action="/register-lecturer" method="POST">
                     @csrf
                     <div class="mt-7">
                         <label for="country"><span class="font-semibold text-md">Country</span>
@@ -19,8 +19,8 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="martial_status"><span class="font-semibold text-md">Martial Status</span>
-                            <input type="text" placeholder="Enter your Martial Status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="martial_status">
+                        <label for="marital_status"><span class="font-semibold text-md">Marital Status</span>
+                            <input type="text" placeholder="Enter your marital Status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="marital_status">
                         </label>
                     </div>
                     <div class="mt-5">
@@ -54,13 +54,13 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="before_name_degree"><span class="font-semibold text-md">Before Name Degree</span>
-                            <input type="text" placeholder="Enter your before name degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="before_name_degree">
+                        <label for="before_name_title"><span class="font-semibold text-md">Before Name title</span>
+                            <input type="text" placeholder="Enter your before name title" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="before_name_title">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="after_name_degree"><span class="font-semibold text-md">After Name Degree</span>
-                            <input id="after_name_degree" type="text" placeholder="Enter your After Name Degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="after_name_degree">
+                        <label for="after_name_title><span class="font-semibold text-md">After Name Title</span>
+                            <input id="after_name_title" type="text" placeholder="Enter your after name title" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="after_name_title">
                         </label>
                     </div>
                     <div class="mt-5">
@@ -74,6 +74,15 @@
                                 <option value="internal">Internal</option>
                                 <option value="external">External</option>
                                 <option value="outside">Outside</option>
+                              </select>
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="lecture_role"><span class="font-semibold text-md">Lecture Role</span>
+                            <select name="lecture_role" id="lecture_role">
+                                <option value="supervisor">Supervisor</option>
+                                <option value="examiner">Examiner</option>
+                                <option value="head_of_labs">Head of Labs</option>
                               </select>
                         </label>
                     </div>

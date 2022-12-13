@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('instagram_address')->nullable();
             $table->string('twitter_address')->nullable();
             $table->string('whatsapp_address')->nullable();
+            $table->string('student_role');
             $table->timestamps();
         });
     }

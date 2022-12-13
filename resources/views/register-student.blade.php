@@ -93,6 +93,19 @@
                             <input id="whatsapp_address" type="number" placeholder="Enter your whatsapp address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="whatsapp_address">
                         </label>
                     </div>
+                    <div class="mt-5">
+                        <label for="student_status"><span class="font-semibold text-md">Student Status</span>
+                            <select name="lecture_status" id="lecture_status">
+                                <option value="bachelor">Bachelor</option>
+                                <option value="master">Master</option>
+                                <option value="doctoral_degree">Doctoral Degree</option>
+                                <option value="fast_track">Fast Track</option>
+                              </select>
+                        </label>
+                        @error('staff_status')
+                            <p class="text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
                         Submit
                     </button>

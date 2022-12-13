@@ -102,7 +102,7 @@
                     </div>
                     <div class="mt-5">
                         <label for="role"><span class="font-semibold text-md">Roles</span>
-                            <select name="role" id="cars">
+                            <select name="role" id="role">
                                 <option value="student">Student</option>
                                 <option value="lecture">Lecture</option>
                                 <option value="admin">Admin</option>
