@@ -10,20 +10,22 @@
                 <div class="flex justify-end">
                     <a href="/" class=""><i class="fa-solid fa-xmark"></i></a>
                 </div>
-                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Let’s make your <br> account!</h1>
-                <form action="/register" method="POST" enctype="multipart/form-data">
+                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Additional Data <br> Lecturer</h1>
+                <form action="/register" method="POST">
                     @csrf
                     <div class="mt-7">
                         <label for="first_name"><span class="font-semibold text-md">First Name</span>
                             <input type="text" placeholder="Enter your First Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="first_name">
-                            @error('first_name')
-                            <p class="text-red-500">{{$message}}</p>
-                            @enderror
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="full_name"><span class="font-semibold text-md">Full Name</span>
-                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="full_name">
+                        <label for="middle_name"><span class="font-semibold text-md">Middle Name</span>
+                            <input type="text" placeholder="Enter your Middle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middle_name">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="last_name"><span class="font-semibold text-md">Last Name</span>
+                            <input type="text" placeholder="Enter your last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
                         </label>
                     </div>
                     <div class="mt-5">
@@ -34,9 +36,6 @@
                     <div class="mt-5">
                         <label for="phone_number"><span class="font-semibold text-md">Phone Number</span>
                             <input id="phone type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phone_number">
-                            @error('phone_number')
-                            <p class="text-red-500">{{$message}}</p>
-                            @enderror
                         </label>
                     </div>
                     <div class="mt-5">
@@ -57,9 +56,6 @@
                     <div class="mt-5">
                         <label for="nik"><span class="font-semibold text-md">NIK</span>
                             <input type="number" placeholder="Enter your NIK" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="nik">
-                            @error('nik')
-                            <p class="text-red-500">{{$message}}</p>
-                            @enderror
                         </label>
                     </div>
                     <div class="mt-5">
@@ -129,9 +125,6 @@
                                 </div>
                             </div>
                         </label>
-                        @error('password')
-                        <p class="text-red-500">{{$message}}</p>
-                        @enderror
                     </div>
                     <button class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
                         Sign Up
