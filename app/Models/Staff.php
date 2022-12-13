@@ -8,6 +8,7 @@ use App\Models\User;
 
 class Staff extends Model
 {
+    public $table = "staffs";
     use HasFactory;
 
     public function user()

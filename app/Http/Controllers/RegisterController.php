@@ -25,23 +25,23 @@ class RegisterController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         $user = new User();
         $user->fill([
-            'full_name' => $request->full_name,
             'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'address' => $request->address,
-            'registration_number' => $request->registration_number,
             'phone_number' => $request->phone_number,
             'birth_date' => $request->birth_date,
             'place_of_birth' => $request->place_of_birth,
-            'password' => $validatedData['password'],
+            'nik' => $request->nik,
+            'unit_name' => $request->unit_name,
+            'address' => $request->address,
+            'registration_number' => $request->registration_number,
+            'group_id' => $request->group_id,
             'sex' => $request->sex,
             'religion' => $request->religion,
             'blood_type' => $request->blood_type,
+            'password' => Hash::make($request->password),
             'role' => $request->role,
-            'isStudent' => $request->role == 'student' ? true : false,
-            'isAdmin' => $request->role == 'admin' ? true : false,
-            'isLecture' => $request->role == 'lecture' ? true : false,
             ]);
         $request->session()->put('user', $user);
         // dd($user);
@@ -54,7 +54,7 @@ class RegisterController extends Controller
         else{
             return redirect('register-lecturer');
         }
-       
+
     }
 
 
@@ -70,7 +70,7 @@ class RegisterController extends Controller
             else{
                 return view('register-lecturer', compact('user'));
             }
-           
+
         }
 
         public function store2(Request $request)
@@ -80,6 +80,7 @@ class RegisterController extends Controller
             $user = $request->session()->get('user');
 
             if($user->role == 'student'){
+            $user = $request->session()->get('user');
             $user->save();
             $student = new Student();
                     $student->previous_degree = $request->previous_degree;
@@ -102,21 +103,26 @@ class RegisterController extends Controller
             }
 
             elseif($user->role == 'admin'){
+            $user = $request->session()->get('user');
             $user->save();
-            $staff = new Staff();
-            $staff->martial_status = $request->martial_status;
+            $staff = new Staff;
+            $staff->marital_status = $request->marital_status;
             $staff->position = $request->position;
             $staff->rank = $request->rank;
             $staff->class = $request->class;
             $staff->functional = $request->functional;
             $staff->highest_education = $request->highest_education;
+            $staff->after_name_degree = $request->after_name_degree;
             $staff->before_name_degree = $request->before_name_degree;
             $staff->staff_status = $request->staff_status;
             $user->staff()->save($staff);
+            dd($staff);
             $request->session()->forget('user');
+
             }
 
             else{
+                $user = $request->session()->get('user');
                 $user->save();
                 $lecture = new Lecture();
                 $lecture->country = $request->country;
@@ -132,7 +138,7 @@ class RegisterController extends Controller
             $user->lecture()->save($lecture);
             $request->session()->forget('user');
             }
-            return redirect('/login');
+
 
         }
 }

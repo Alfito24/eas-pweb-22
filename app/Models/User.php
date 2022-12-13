@@ -41,6 +41,7 @@ class User extends Authenticatable
         'isStudent',
         'isLecture',
         'isAdmin',
+        'password'
 
     ];
 
@@ -63,17 +64,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function student() 
+    public function student()
     {
         return $this->hasOne(Student::class);
     }
 
-    public function staff() 
+    public function staff()
     {
         return $this->hasOne(Staff::class);
     }
 
-    public function lecture() 
+    public function lecture()
     {
         return $this->hasOne(Lecture::class);
     }
