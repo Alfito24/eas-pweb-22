@@ -11,7 +11,7 @@
                     <a href="/" class=""><i class="fa-solid fa-xmark"></i></a>
                 </div>
                 <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Let’s make your <br> account!</h1>
-                <form action="/register" method="POST">
+                <form action="/register" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mt-7">
                         <label for="first_name"><span class="font-semibold text-md">First Name</span>

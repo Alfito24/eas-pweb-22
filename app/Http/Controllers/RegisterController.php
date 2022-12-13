@@ -35,6 +35,13 @@ class RegisterController extends Controller
         $user->blood_type = $request->blood_type;
         $user->address = $request->address;
         $user->password = $validatedData['password'];
+        //file photo
+        $file = $request->file('photo');
+        $nama_file = time()."_".$file->getClientOriginalName();
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$nama_file);
+
+        $user->photo = $nama_file;
          if($request->role == 'student'){
             $user->isStudent = true;
         }
