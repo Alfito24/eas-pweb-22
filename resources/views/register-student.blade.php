@@ -10,55 +10,87 @@
                 <div class="flex justify-end">
                     <a href="/" class=""><i class="fa-solid fa-xmark"></i></a>
                 </div>
-                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Additional Data <br> Staff</h1>
-                <form action="/register" method="POST">
+                <h1 class="font-bold text-2xl text-center mt-1 lg:text-3xl">Additional Data <br> Student</h1>
+                <form action="/register-student" method="POST">
                     @csrf
                     <div class="mt-7">
-                        <label for=""><span class="font-semibold text-md">Martial Status</span>
-                            <input type="text" placeholder="Enter your Martial Status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="martial_status">
-                        </label>
-                    </div>
-                    <div class="mt-5">
-                        <label for="position"><span class="font-semibold text-md">Position</span>
-                            <input type="text" placeholder="Enter your position" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="position">
-                        </label>
-                    </div>
-                    <div class="mt-5">
-                        <label for="rank"><span class="font-semibold text-md">Rank</span>
-                            <input type="text" placeholder="Enter your rank" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="rank">
-                        </label>
-                    </div>
-                    <div class="mt-5">
-                        <label for="class"><span class="font-semibold text-md">Class</span>
-                            <input type="text" placeholder="Enter your class" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="class">
-                        </label>
-                    </div>
-                    <div class="mt-5">
-                        <label for="functional"><span class="font-semibold text-md">Functional</span>
-                            <input id="functional" type="text" placeholder="Enter your functional" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="functional">
+                        <label for="previous_degree"><span class="font-semibold text-md">Previous Degree</span>
+                            <input type="text" placeholder="Enter your previous degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="previous_degree">
                         </label>
                     </div>
                     <div class="mt-5">
                         <label for="highest_education"><span class="font-semibold text-md">Highest Education</span>
-                            <input id="highest_education" type="text" placeholder="Enter your highest education" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="highest_education">
+                            <input type="text" placeholder="Enter your highest education" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="highest_education">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="before_name_degree"><span class="font-semibold text-md">Before Name Degree</span>
-                            <input type="text" placeholder="Enter your before name degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="before_name_degree">
+                        <label for="origin_address"><span class="font-semibold text-md">Origin Address</span>
+                            <input type="text" placeholder="Enter your origin address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="origin_address">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="after_name_degree"><span class="font-semibold text-md">After Name Degree</span>
-                            <input id="after_name_degree" type="text" placeholder="Enter your After Name Degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="after_name_degree">
+                        <label for="level"><span class="font-semibold text-md">Level</span>
+                            <input type="text" placeholder="Enter your level" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="level">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="staff_status"><span class="font-semibold text-md">Staff Status</span>
-                            <select name="staff_status" id="staff_status">
-                                <option value="departements">Departements</option>
-                                <option value="its">ITS</option>
-                              </select>
+                        <label for="laboratorium"><span class="font-semibold text-md">Laboratorium</span>
+                            <input id="laboratorium" type="text" placeholder="Enter your laboratorium" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="laboratorium">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="entry_date"><span class="font-semibold text-md">Entry Date</span>
+                            <input id="entry_date" type="date" placeholder="Enter your highest entry date" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="entry_date">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="marital_status"><span class="font-semibold text-md">Marital Status</span>
+                            <input type="text" placeholder="Enter your marital status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="marital_status">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="student_type"><span class="font-semibold text-md">Student Type</span>
+                            <input id="student_type" type="text" placeholder="Enter your student type" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="student_type">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="student_status"><span class="font-semibold text-md">Student Status</span>
+                            <input id="student_status" type="text" placeholder="Enter your student status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="student_status">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="parent_address"><span class="font-semibold text-md">Parent Address</span>
+                            <input id="parent_address" type="text" placeholder="Enter your parent address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="parent_address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="parent_phone"><span class="font-semibold text-md">Parent Phone</span>
+                            <input id="parent_phone" type="number" placeholder="Enter your parent phone" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="parent_phone">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="alternate_email_address"><span class="font-semibold text-md">Alternate Email Address</span>
+                            <input id="alternate_email_address" type="email" placeholder="Enter your alternate email address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="alternate_email_address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="facebook_address"><span class="font-semibold text-md">Facebook Address</span>
+                            <input id="facebook_address" type="text" placeholder="Enter your facebook address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="facebook_address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="instagram_address"><span class="font-semibold text-md">Instagram Address</span>
+                            <input id="instagram_address" type="text" placeholder="Enter your instagram address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="instagram_address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="twitter_address"><span class="font-semibold text-md">Twitter Address</span>
+                            <input id="twitter_address" type="text" placeholder="Enter your student status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="twitter_address">
+                        </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="whatsapp_address"><span class="font-semibold text-md">WhatsApp Address</span>
+                            <input id="whatsapp_address" type="number" placeholder="Enter your whatsapp address" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="whatsapp_address">
                         </label>
                     </div>
                     <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">

@@ -36,7 +36,7 @@
                     </div>
                     <div class="mt-5">
                         <label for="phone_number"><span class="font-semibold text-md">Phone Number</span>
-                            <input id="phone type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phone_number">
+                            <input id="phone" type="number" placeholder="Enter your Phone Number" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="phone_number">
                             @error('phone_number')
                             <p class="text-red-500">{{$message}}</p>
                             @enderror

@@ -15,7 +15,7 @@
                     @csrf
                     <div class="mt-7">
                         <label for="marital_status"><span class="font-semibold text-md">Marital Status</span>
-                            <input type="text" placeholder="Enter your Martial Status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="marital_status">
+                            <input type="text" placeholder="Enter your Marital Status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="marital_status">
                         @error('marital_status')
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
@@ -76,8 +76,8 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="after_name_degree"><span class="font-semibold text-md">After Name Degree</span>
-                            <input id="after_name_degree" type="text" placeholder="Enter your After Name Degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="after_name_degree">
+                        <label for="after_name_degree"><span class="font-semibold text-md">After name degree</span>
+                            <input id="after_name_degree" type="text" placeholder="Enter your After name degree" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="after_name_degree">
 
                         @error('after_name_degree')
                         <p class="text-red-500">{{ $message }}</p>
@@ -91,11 +91,11 @@
                                 <option value="its">ITS</option>
                               </select>
                         </label>
-
                         @error('staff_status')
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
+
                     <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
                         Submit
                     </button>

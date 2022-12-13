@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('level')->nullable();
             $table->string('laboratorium')->nullable();
             $table->date('entry_date')->nullable();
-            $table->string('martial_status')->nullable();
+            $table->string('marital_status')->nullable();
             $table->string('student_type')->nullable();
             $table->string('student_status')->nullable();
             $table->string('parent_address')->nullable();

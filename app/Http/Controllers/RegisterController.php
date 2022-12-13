@@ -75,21 +75,18 @@ class RegisterController extends Controller
 
         public function store2(Request $request)
         {
-
-
             $user = $request->session()->get('user');
-
             if($user->role == 'student'){
             $user = $request->session()->get('user');
             $user->save();
             $student = new Student();
-                    $student->previous_degree = $request->previous_degree;
+        $student->previous_degree = $request->previous_degree;
         $student->highest_education = $request->highest_education;
         $student->origin_address = $request->position;
         $student->level = $request->level;
         $student->laboratorium = $request->laboratorium;
         $student->entry_date = $request->entry_date;
-        $student->martial_status = $request->martial_status;
+        $student->marital_status = $request->marital_status;
         $student->student_type = $request->student_type;
         $student->student_status = $request->student_status;
         $student->parent_address = $request->parent_address;
@@ -115,6 +112,7 @@ class RegisterController extends Controller
             $staff->after_name_degree = $request->after_name_degree;
             $staff->before_name_degree = $request->before_name_degree;
             $staff->staff_status = $request->staff_status;
+            $staff->staff_role = $request->staff_role;
             $user->staff()->save($staff);
             dd($staff);
             $request->session()->forget('user');
@@ -126,7 +124,7 @@ class RegisterController extends Controller
                 $user->save();
                 $lecture = new Lecture();
                 $lecture->country = $request->country;
-                $lecture->martial_status = $request->martial_status;
+                $lecture->marital_status = $request->marital_status;
                 $lecture->position = $request->position;
                 $lecture->rank = $request->rank;
                 $lecture->class = $request->class;
