@@ -39,9 +39,6 @@ class RegisterController extends Controller
             'religion' => $request->religion,
             'blood_type' => $request->blood_type,
             'role' => $request->role,
-            'isStudent' => $request->role == 'student' ? true : false,
-            'isAdmin' => $request->role == 'admin' ? true : false,
-            'isLecture' => $request->role == 'lecture' ? true : false,
             ]);
         $request->session()->put('user', $user);
         // dd($user);
@@ -54,7 +51,7 @@ class RegisterController extends Controller
         else{
             return redirect('register-lecturer');
         }
-       
+
     }
 
 
@@ -70,7 +67,7 @@ class RegisterController extends Controller
             else{
                 return view('register-lecturer', compact('user'));
             }
-           
+
         }
 
         public function store2(Request $request)
