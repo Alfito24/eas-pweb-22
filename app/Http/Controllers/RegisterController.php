@@ -40,10 +40,11 @@ class RegisterController extends Controller
             'role' => $request->role,
             ]);
         $request->session()->put('user', $user);
-        dd($user);
+       
         if($user->role == 'student'){
-            
+            return redirect('/register-student');
         }
+        elseif($user->role == 'staff')
         // return redirect('/register2');
     }
 
