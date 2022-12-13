@@ -15,22 +15,24 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('previous_degree');
-            $table->string('highest_education');
-            $table->string('origin_address');
-            $table->string('level');
-            $table->string('laboratorium');
-            $table->date('entry_date');
-            $table->string('martial_status');
-            $table->string('student_type');
-            $table->string('student_status');
-            $table->string('parent_address');
-            $table->string('parent_phone');
-            $table->string('alternate_email_address');
-            $table->string('facebook_address');
-            $table->string('instagram_address');
-            $table->string('twitter_address');
-            $table->string('whatsapp_address');
+            $table->string('highest_education')->nullable();
+            $table->string('origin_address')->nullable();
+            $table->string('level')->nullable();
+            $table->string('laboratorium')->nullable();
+            $table->date('entry_date')->nullable();
+            $table->string('martial_status')->nullable();
+            $table->string('student_type')->nullable();
+            $table->string('student_status')->nullable();
+            $table->string('parent_address')->nullable();
+            $table->string('parent_phone')->nullable();
+            $table->string('alternate_email_address')->nullable();
+            $table->string('facebook_address')->nullable();
+            $table->string('instagram_address')->nullable();
+            $table->string('twitter_address')->nullable();
+            $table->string('whatsapp_address')->nullable();
             $table->timestamps();
         });
     }
