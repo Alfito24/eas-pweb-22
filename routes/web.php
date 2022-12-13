@@ -18,6 +18,9 @@ use App\Http\Controllers\LoginController;
 //     return view('register');
 // });
 Route::post('/register', [RegisterController::class, 'store'] );
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/register', function () {
     return view('register');
 });
