@@ -45,14 +45,32 @@ class RegisterController extends Controller
             ]);
         $request->session()->put('user', $user);
         // dd($user);
-        return redirect('/register2');
+        if ($user->role == 'student'){
+            return redirect('/register-student');
+        }
+        elseif ($user->role == 'admin' ){
+            return redirect('/register-staff');
+        }
+        else{
+            return redirect('register-lecturer');
+        }
+       
     }
 
 
         public function index2(Request $request)
         {
             $user = $request->session()->get('user');
-            return view('register2', compact('user'));
+            if($user->role == 'student'){
+                return view('register-student', compact('user'));
+            }
+            elseif ($user->role == 'admin' ){
+                return view('register-staff', compact('user'));
+            }
+            else{
+                return view('register-lecturer', compact('user'));
+            }
+           
         }
 
         public function store2(Request $request)
