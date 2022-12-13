@@ -13,7 +13,7 @@ class RegisterController extends Controller
     public function store(Request $request){
         
         $validatedData=  $request->validate([
-              'nik'=>'required|max:16|min:16',
+             'nik'=>'required|max:16|min:16',
              'first_name' => 'required',
              'email' => 'required|email:dns|unique:users',
              'phone_number'=>'required|min:10|max:13',
@@ -38,13 +38,13 @@ class RegisterController extends Controller
             'religion' => $request->religion,
             'blood_type' => $request->blood_type,
             'role' => $request->role,
-            'isStudent' => $request->role == 'student' ? true : false,
-            'isAdmin' => $request->role == 'admin' ? true : false,
-            'isLecture' => $request->role == 'lecture' ? true : false,
             ]);
         $request->session()->put('user', $user);
-        // dd($user);
-        return redirect('/register2');
+        dd($user);
+        if($user->role == 'student'){
+            
+        }
+        // return redirect('/register2');
     }
 
 
