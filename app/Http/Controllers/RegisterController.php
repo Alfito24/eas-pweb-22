@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Lecture;
+use App\Models\Staff;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
     public function store(Request $request){
-        
+
         $validatedData=  $request->validate([
               'nik'=>'required|max:16|min:16',
              'first_name' => 'required',
@@ -53,37 +54,67 @@ class RegisterController extends Controller
             $user = $request->session()->get('user');
             return view('register2', compact('user'));
         }
-    
+
         public function store2(Request $request)
         {
-      
-    
+
+
             $user = $request->session()->get('user');
-            
-            if($user->role == 'student'){    
+
+            if($user->role == 'student'){
             $user->save();
-            $student = new Student();   
-            $student->previous_degree = $request->previous_degree; 
-            $user->student()->save($student);  
-            $request->session()->forget('user');  
+            $student = new Student();
+                    $student->previous_degree = $request->previous_degree;
+        $student->highest_education = $request->highest_education;
+        $student->origin_address = $request->position;
+        $student->level = $request->level;
+        $student->laboratorium = $request->laboratorium;
+        $student->entry_date = $request->entry_date;
+        $student->martial_status = $request->martial_status;
+        $student->student_type = $request->student_type;
+        $student->student_status = $request->student_status;
+        $student->parent_address = $request->parent_address;
+        $student->alternate_email_address = $request->alternate_email_address;
+        $student->facebook_address = $request->facebook_address;
+        $student->instagram_address = $request->instagram_address;
+        $student->twitter_address = $request->twitter_address;
+        $student->whatsapp_address = $request->whatsapp_address;
+            $user->student()->save($student);
+            $request->session()->forget('user');
             }
 
             elseif($user->role == 'admin'){
             $user->save();
             $staff = new Staff();
-            // lanjutin aja untuk yang admin data2nya
+            $staff->martial_status = $request->martial_status;
+            $staff->position = $request->position;
+            $staff->rank = $request->rank;
+            $staff->class = $request->class;
+            $staff->functional = $request->functional;
+            $staff->highest_education = $request->highest_education;
+            $staff->before_name_degree = $request->before_name_degree;
+            $staff->staff_status = $request->staff_status;
+            $user->staff()->save($staff);
+            $request->session()->forget('user');
             }
 
             else{
                 $user->save();
                 $lecture = new Lecture();
-             // lanjutin buat lecture   
+                $lecture->country = $request->country;
+                $lecture->martial_status = $request->martial_status;
+                $lecture->position = $request->position;
+                $lecture->rank = $request->rank;
+                $lecture->class = $request->class;
+                $lecture->functional = $request->functional;
+                $lecture->highest_education = $request->highest_education;
+                $lecture->before_name_degree = $request->before_name_degree;
+                $lecture->after_name_degree = $request->after_name_degree;
+                $lecture->laboratorium = $request->lecture_status;
+            $user->lecture()->save($lecture);
+            $request->session()->forget('user');
             }
-            
-    
-            
-    
             return redirect('/login');
-    
+
         }
 }
