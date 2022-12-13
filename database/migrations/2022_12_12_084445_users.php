@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('religion');
             $table->string('blood_type');
             $table->string('address');
+            $table->string('role');
             $table->boolean('isStudent')->default(False);
             $table->boolean('isLecture')->default(False);
             $table->boolean('isAdmin')->default(False);

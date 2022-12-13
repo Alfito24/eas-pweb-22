@@ -9,43 +9,88 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function store(Request $request){
-        $user = new User;
+        
         $validatedData=  $request->validate([
              'nik'=>'required|max:16|min:16',
              'fullName' => 'required',
              'email' => 'required|email:dns|unique:users',
              'phone_number'=>'required|min:10|max:13',
              'password' => 'required|min:8|max:20',
+             'role' => 'required'
          ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-        $user->full_name = $request->fullName;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        $user->address = $request->address;
-        $user->registration_number = $request->registration_number;
-        $user->phone_number = $request->phone_number;
-        $user->birth_date = $request->birth_date;
-        $user->place_of_birth = $request->place_of_birth;
-        $user->password = $validatedData['password'];
-        $user->sex = $request->sex;
-        $user->religion = $request->religion;
-        $user->blood_type = $request->blood_type;
-         if($request->role == 'student'){
-            $user->isStudent = true;
+        if(empty($request->session()->get('user'))){
+        $user = new User;
+        $user->fill([
+            'full_name' => $request->fullName,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'address' => $request->address,
+            'registration_number' => $request->registration_number,
+            'phone_number' => $request->phone_number,
+            'birth_date' => $request->birth_date,
+            'place_of_birth' => $request->place_of_birth,
+            'password' => $validatedData['password'],
+            'sex' => $request->sex,
+            'religion' => $request->religion,
+            'blood_type' => $request->blood_type,
+            'role' => $request->role,
+            'isStudent' => $request->role == 'student' ? true : false,
+            'isAdmin' => $request->role == 'admin' ? true : false,
+            'isLecture' => $request->role == 'lecture' ? true : false,
+            ]);
+            $request->session()->put('user', $user);
+    }
+    else{
+        $user = $request->session()->get('user');
+        $user->fill(
+            [
+                'full_name' => $request->fullName,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'address' => $request->address,
+                'registration_number' => $request->registration_number,
+                'phone_number' => $request->phone_number,
+                'birth_date' => $request->birth_date,
+                'place_of_birth' => $request->place_of_birth,
+                'password' => $validatedData['password'],
+                'sex' => $request->sex,
+                'religion' => $request->religion,
+                'blood_type' => $request->blood_type,
+                'isStudent' => $request->role == 'student' ? true : false,
+                'isAdmin' => $request->role == 'admin' ? true : false,
+                'isLecture' => $request->role == 'lecture' ? true : false,
+            ]
+        );
+        $request->session()->put('user', $user);
+      };
+        return redirect('/register2');
         }
-         elseif($request->role == 'admin'){
-            $user->isAdmin = true;
+
+
+        public function index2(Request $request)
+        {
+            $user = $request->session()->get('user');
+            return view('register2', compact('user'));
         }
-         else{
-            $user->isLecture = true;
-        }
+    
+        public function store2(Request $request)
+        {
+      
+    
+            $user = $request->session()->get('user');
+            
+            if($user->role == 'student'){    
+            $user->save();
+            $student = new Student;
 
-        $user->save();
-        // dd($user);
-
-
-
-         return redirect('/');
+            }
+            
+    
+            $request->session()->forget('user');
+    
+            return redirect('/');
+    
         }
 }
