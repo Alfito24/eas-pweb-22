@@ -19,18 +19,21 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="username"><span class="font-semibold text-md">NIK</span>
-                            <input type="number" placeholder="Enter your NIK" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="nik">
+                        <label for="middle_name"><span class="font-semibold text-md">Middle Name</span>
+                            <input type="text" placeholder="Enter your Middle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middle_name">
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="full_name"><span class="font-semibold text-md">Full Name</span>
-                            <input type="text" placeholder="Enter your Full Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="full_name">
+                        <label for="last_name"><span class="font-semibold text-md">Last Name</span>
+                            <input type="text" placeholder="Enter your last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
                         </label>
                     </div>
                     <div class="mt-5">
                         <label for="email"><span class="font-semibold text-md">Email</span>
                             <input type="email" placeholder="Enter your email" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="email">
+                            @error('email')
+                            <p class="text-red-500">{{$message}}</p>
+                            @enderror
                         </label>
                     </div>
                     <div class="mt-5">
@@ -48,7 +51,7 @@
                     </div>
                     <div class="mt-5">
                         <label for="place_of_birth"><span class="font-semibold text-md">Place of Birth</span>
-                            <input id="place_of_birth" type="text" placeholder="Enter your pplace of Birth" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="place_of_birth">
+                            <input id="place_of_birth" type="text" placeholder="Enter your place of Birth" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="place_of_birth">
                         </label>
                     </div>
                     <div class="mt-5">

@@ -10,9 +10,9 @@ class RegisterStudentController extends Controller
     public function store(Request $request)
     {
         $student = new Student;
-        $student->country = $request->country;
-        $student->martial_status = $request->martial_status;
-        $student->position = $request->position;
+        $student->previous_degree = $request->previous_degree;
+        $student->highest_education = $request->highest_education;
+        $student->origin_address = $request->position;
         $student->rank = $request->rank;
         $student->class = $request->class;
         $student->functional = $request->functional;
