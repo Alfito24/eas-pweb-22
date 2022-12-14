@@ -74,7 +74,7 @@
                                 <option value="on_leave">On Leave</option>
                                 <option value="on_probation">On Probation</option>
                                 <option value="on_warning">On Warning</option>
-                                <option value="not_active">not_active</option>
+                                <option value="not_active">Not Active</option>
                               </select>
                         </label>
                         @error('student_type')
