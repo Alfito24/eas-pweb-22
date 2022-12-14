@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class LectureController extends Controller
 {
     public function index(){
-        $request = ModelsRequest::where('lecture_acceptance', false)->get();
+        $request = ModelsRequest::where('lecture_acceptance', 0)->get();
         return view('dashboard.lecture.listrequest', compact('request'));
     }
     public function viewRequest($id){
