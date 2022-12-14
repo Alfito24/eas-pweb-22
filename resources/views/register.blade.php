@@ -31,7 +31,7 @@
                     </div>
                     <div class="mt-5">
                         <label for="last_name"><span class="font-semibold text-md">Last Name</span>
-                            <input type="text" placeholder="Enter your last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
+                            <input type="text" placeholder="Enter your Last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
                         </label>
                     </div>
                     <div class="mt-5">
