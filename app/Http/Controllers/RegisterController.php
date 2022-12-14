@@ -98,6 +98,7 @@ class RegisterController extends Controller
         $student->student_role = $request->student_role;
         $user->student()->save($student);
         $request->session()->forget('user');
+        return redirect('/login');
         }
 
             elseif($user->role == 'admin'){
@@ -116,6 +117,7 @@ class RegisterController extends Controller
             $user->staff()->save($staff);
             dd($staff);
             $request->session()->forget('user');
+            return redirect('/login');
             }
 
             else{
@@ -137,6 +139,7 @@ class RegisterController extends Controller
             $lecture->lecture_role = $request->lecture_role;
             $user->lecture()->save($lecture);
             $request->session()->forget('user');
+            return redirect('/login');
             }
         }
 }

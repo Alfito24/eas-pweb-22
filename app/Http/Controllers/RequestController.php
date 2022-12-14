@@ -12,7 +12,7 @@ class RequestController extends Controller
         return view('dashboard.createrequest');
     }
     public function listRequest(){
-        $requests = ModelsRequest::all();
+        $requests = ModelsRequest::where('id', Auth::id());
         return view('dashboard.student.listrequest', compact('requests'));
     }
     public function store(Request $request){

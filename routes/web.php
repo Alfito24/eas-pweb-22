@@ -52,9 +52,9 @@ Route::get('/dashboard_user/listrequest', [RequestController::class, 'listReques
 Route::get('/editrequest/{id}', [RequestController::class, 'editRequest']);
 Route::post('/editrequest/{id}', [RequestController::class, 'updateRequest']);
 
-Route::get('/dashboard_admin', [DashboardController::class, 'index']);
-Route::get('/dashboard_admin/viewrequest/{id}', [DashboardController::class, 'viewRequest']);
-Route::post('/acceptadmin/{id}', [DashboardController::class, 'accept']);
+Route::get('/dashboard_admin', [DashboardController::class, 'index'])->middleware('admin');
+Route::get('/dashboard_admin/viewrequest/{id}', [DashboardController::class, 'viewRequest'])->middleware('admin');
+Route::post('/acceptadmin/{id}', [DashboardController::class, 'accept'])->middleware('admin');
 
 
 Route::get('/dashboard_lecture', [LectureController::class, 'index']);
