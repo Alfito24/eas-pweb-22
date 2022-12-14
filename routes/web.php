@@ -47,8 +47,7 @@ Route::get('/make-request', [RequestController::class, 'index']);
 Route::post('/make-request', [RequestController::class, 'store']);
 
 Route::get('/dashboard_user', [RequestController::class, 'index']);
-Route::get('/dashboard_user/listrequest/{id}', [RequestController::class, 'index']);
-Route::get('/dashboard_user/listrequest', [RequestController::class, 'listRequest']);
+Route::get('/dashboard_user/listrequest/{id}', [RequestController::class, 'listRequest']);
 Route::get('/editrequest/{id}', [RequestController::class, 'editRequest']);
 Route::post('/editrequest/{id}', [RequestController::class, 'updateRequest']);
 

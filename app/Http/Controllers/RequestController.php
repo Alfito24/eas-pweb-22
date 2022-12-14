@@ -11,8 +11,8 @@ class RequestController extends Controller
     public function index(){
         return view('dashboard.createrequest');
     }
-    public function listRequest(){
-        $requests = ModelsRequest::where('id', Auth::id());
+    public function listRequest($id){
+        $requests = ModelsRequest::where('student_id', $id)->get();
         return view('dashboard.student.listrequest', compact('requests'));
     }
     public function store(Request $request){

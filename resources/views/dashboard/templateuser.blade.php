@@ -74,14 +74,14 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="/dashboard_user">
               <span data-feather="home"></span>
               Buat Request
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard_user/listrequest">
-                <a class="nav-link" href="/dashboard_user/listrequest">
+            <a class="nav-link" href="/dashboard_user/listrequest/">
+                <a class="nav-link" href="/dashboard_user/listrequest/{{ Auth::user()->id }}">
               <span data-feather="users"></span>
               Lihat Request
             </a>
