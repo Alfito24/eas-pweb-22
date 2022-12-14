@@ -50,13 +50,36 @@
                     </div>
                     <div class="mt-5">
                         <label for="student_type"><span class="font-semibold text-md">Student Type</span>
-                            <input id="student_type" type="text" placeholder="Enter your student type" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="student_type">
+                            <select name="student_type" id="student_type">
+                                <option value="regular">Regular</option>
+                                <option value="iup">IUP</option>
+                                <option value="doctoral_degree">Doctoral Degree</option>
+                                <option value="joint_degree">Joint Degree</option>
+                                <option value="collaboration">collaboration</option>
+                              </select>
                         </label>
+                        @error('student_type')
+                            <p class="text-red-500">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mt-5">
                         <label for="student_status"><span class="font-semibold text-md">Student Status</span>
                             <input id="student_status" type="text" placeholder="Enter your student status" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="student_status">
                         </label>
+                    </div>
+                    <div class="mt-5">
+                        <label for="student_status"><span class="font-semibold text-md">Student Status</span>
+                            <select name="student_status" id="student_status">
+                                <option value="active">Active</option>
+                                <option value="on_leave">On Leave</option>
+                                <option value="on_probation">On Probation</option>
+                                <option value="on_warning">On Warning</option>
+                                <option value="not_active">not_active</option>
+                              </select>
+                        </label>
+                        @error('student_type')
+                            <p class="text-red-500">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mt-5">
                         <label for="parent_address"><span class="font-semibold text-md">Parent Address</span>
