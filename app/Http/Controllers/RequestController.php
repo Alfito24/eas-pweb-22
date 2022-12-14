@@ -41,7 +41,7 @@ class RequestController extends Controller
         ModelsRequest::where('id', $id)->update([
             'title'=>$request->title,
             'file'=>$nama_file,
-            'lecture_check'=>0
+            'lecture_acceptance'=>0
         ]);
         return redirect('/dashboard_user/listrequest');
     }
