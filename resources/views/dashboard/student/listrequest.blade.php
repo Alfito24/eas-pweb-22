@@ -22,7 +22,7 @@
             <button type="button" class="btn btn-success">Accepted</button>
             @elseif ($request->lecture_acceptance == false)
             <button type="button" class="btn btn-danger">Rejected</button>
-            @else
+            @elseif($request->lecture_check == true)
             <button type="button" class="btn btn-warning">Waiting</button>
             @endif
         </td>

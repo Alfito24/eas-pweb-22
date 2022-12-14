@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('file')->nullable();
             $table->foreignId('student_id');
+            $table->boolean('lecture_check')->default(true);
             $table->boolean('lecture_acceptance')->default(false);
             $table->boolean('admin_acceptance')->default(false);
             $table->timestamps();
