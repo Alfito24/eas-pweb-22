@@ -1,0 +1,51 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        User::create([
+            'first_name' => 'Khansa',
+            'phone_number'=>'082234124222',
+            'email' => 'khansaalfito3456@gmail.com',
+            'place_of_birth'=> 'Surabaya',
+            'nik'=>'3578232412010001',
+            'unit_name'=>'DPTSI',
+            'registration_number'=>'12331',
+            'group_id'=>'1',
+            'sex'=>'M',
+            'religion'=>'Islam',
+            'blood_type'=>'O',
+            'address'=>'Surabaya',
+            'role'=>'student',
+            'password' => bcrypt('12345678'),
+        ]);
+        User::create([
+            'first_name' => 'Bashara',
+            'phone_number'=>'082234124223',
+            'email' => 'basharaaina@gmail.com',
+            'place_of_birth'=> 'Surabaya',
+            'nik'=>'3578232412010002',
+            'unit_name'=>'DPTSI',
+            'registration_number'=>'12332',
+            'group_id'=>'1',
+            'sex'=>'M',
+            'religion'=>'Islam',
+            'blood_type'=>'O',
+            'address'=>'Surabaya',
+            'role'=>'admin',
+            'password' => bcrypt('12345678'),
+        ]);
+    }
+}

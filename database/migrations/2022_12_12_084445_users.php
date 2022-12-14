@@ -20,13 +20,13 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
-            $table->date('birth_date');
+            $table->date('birth_date')->nullable();
             $table->string('place_of_birth');
             $table->text('photo')->nullable();
             $table->string('nik')->unique();
             $table->string('unit_name');
             $table->string('registration_number')->unique();
-            $table->string('group_id')->unique();
+            $table->string('group_id');
             $table->string('sex');
             $table->string('religion');
             $table->string('blood_type');
