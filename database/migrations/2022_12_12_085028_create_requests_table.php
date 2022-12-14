@@ -16,12 +16,13 @@ return new class extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('note_lecture')->nullable();
+            $table->string('note_admin')->nullable();
             $table->text('file')->nullable();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('lecture_check')->default(true);
-            $table->boolean('lecture_acceptance')->default(false);
-            $table->boolean('admin_acceptance')->default(false);
+            $table->integer('lecture_acceptance')->default(0);
+            $table->integer('admin_acceptance')->default(0);
             $table->timestamps();
         });
     }

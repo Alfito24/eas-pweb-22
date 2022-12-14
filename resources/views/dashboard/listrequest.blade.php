@@ -13,7 +13,7 @@
     @foreach ($requests as $request )
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
-        <td>{{ $request->user_id }}</td>
+        <td>{{ $request->title }}</td>
         <td>
           <a href="/dashboard_admin/viewrequest/{{ $request->id }}"><button type="button" class="btn btn-warning">View</button></a>
         </td>

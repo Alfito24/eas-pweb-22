@@ -17,8 +17,14 @@ class LectureController extends Controller
     }
     public function accept($id){
         ModelsRequest::where('id', $id)->update([
-            'lecture_check'=>true,
-            'lecture_acceptance'=>true
+            'lecture_acceptance'=>1
+        ]);
+        return redirect('/dashboard_lecture');
+    }
+    public function reject(Request $request, $id){
+        ModelsRequest::where('id', $id)->update([
+            'lecture_acceptance'=>2,
+            'note_lecture'=>$request->note_lecture
         ]);
         return redirect('/dashboard_lecture');
     }

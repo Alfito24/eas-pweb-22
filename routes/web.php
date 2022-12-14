@@ -57,10 +57,15 @@ Route::get('/dashboard_admin/list_user', [DashboardController::class, 'listUser'
 Route::get('/dashboard_admin/add_user', [DashboardController::class, 'addUser']);
 Route::get('/dashboard_admin/edit_user/{id}', [DashboardController::class, 'editUser']);
 Route::get('/edituser', [DashboardController::class, 'update']);
-Route::post('/acceptadmin/{id}', [DashboardController::class, 'accept'])->middleware('admin');
+
+Route::post('/acceptadmin/{id}', [DashboardController::class, 'accept']);
+Route::post('/rejectadmin/{id}', [DashboardController::class, 'reject']);
+
 Route::get('/user/delete/{id}', [DashboardController::class, 'delete']);
 Route::post('/addUser', [DashboardController::class, 'storeUser']);
 
 Route::get('/dashboard_lecture', [LectureController::class, 'index']);
 Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'viewRequest']);
+
 Route::post('/acceptlecture/{id}', [LectureController::class, 'accept']);
+Route::post('/rejectlecture/{id}', [LectureController::class, 'reject']);

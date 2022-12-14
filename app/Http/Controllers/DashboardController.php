@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        $requests = ModelsRequest::where('lecture_acceptance', true)->get();
+        $requests = ModelsRequest::where('admin_acceptance', 0)->get();
         return view('dashboard.listrequest', compact('requests'));
     }
     public function viewRequest($id){
@@ -96,7 +96,14 @@ class DashboardController extends Controller
     }
     public function accept($id){
         ModelsRequest::where('id', $id)->update([
-            'admin_acceptance'=>true
+            'admin_acceptance'=>1
+        ]);
+        return redirect('/dashboard_admin');
+    }
+    public function reject(Request $request, $id){
+        ModelsRequest::where('id', $id)->update([
+            'admin_acceptance'=>2,
+            'note_admin'=> $request->note_admin
         ]);
         return redirect('/dashboard_admin');
     }
