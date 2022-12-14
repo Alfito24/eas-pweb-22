@@ -94,15 +94,15 @@
                         </label>
                     </div>
                     <div class="mt-5">
-                        <label for="student_status"><span class="font-semibold text-md">Student Status</span>
-                            <select name="lecture_status" id="lecture_status">
+                        <label for="student_role"><span class="font-semibold text-md">Student Role</span>
+                            <select name="student_role" id="student_role">
                                 <option value="bachelor">Bachelor</option>
                                 <option value="master">Master</option>
                                 <option value="doctoral_degree">Doctoral Degree</option>
                                 <option value="fast_track">Fast Track</option>
                               </select>
                         </label>
-                        @error('staff_status')
+                        @error('student_role')
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
