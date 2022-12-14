@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('birth_date')->nullable();
             $table->string('place_of_birth');
             $table->text('photo')->nullable();
-            $table->string('nik')->unique();
+            $table->string('nik')->unique();    
             $table->string('unit_name');
             $table->string('registration_number')->unique();
             $table->string('group_id');

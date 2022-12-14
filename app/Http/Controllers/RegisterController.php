@@ -82,7 +82,7 @@ class RegisterController extends Controller
             $student = new Student();
         $student->previous_degree = $request->previous_degree;
         $student->highest_education = $request->highest_education;
-        $student->origin_address = $request->position;
+        $student->origin_address = $request->origin_address;
         $student->level = $request->level;
         $student->laboratorium = $request->laboratorium;
         $student->entry_date = $request->entry_date;
