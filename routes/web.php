@@ -53,8 +53,13 @@ Route::post('/editrequest/{id}', [RequestController::class, 'updateRequest']);
 
 Route::get('/dashboard_admin', [DashboardController::class, 'index'])->middleware('admin');
 Route::get('/dashboard_admin/viewrequest/{id}', [DashboardController::class, 'viewRequest'])->middleware('admin');
+Route::get('/dashboard_admin/list_user', [DashboardController::class, 'listUser'])->middleware('admin');
+Route::get('/dashboard_admin/add_user', [DashboardController::class, 'addUser']);
+Route::get('/dashboard_admin/edit_user/{id}', [DashboardController::class, 'editUser']);
+Route::get('/edituser', [DashboardController::class, 'update']);
 Route::post('/acceptadmin/{id}', [DashboardController::class, 'accept'])->middleware('admin');
-
+Route::get('/user/delete/{id}', [DashboardController::class, 'delete']);
+Route::post('/addUser', [DashboardController::class, 'storeUser']);
 
 Route::get('/dashboard_lecture', [LectureController::class, 'index']);
 Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'viewRequest']);

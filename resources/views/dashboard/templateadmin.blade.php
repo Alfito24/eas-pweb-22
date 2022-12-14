@@ -76,17 +76,17 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home"></span>
-              Request
+              Requests List
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/dashboard_admin/list_user">
               <span data-feather="users"></span>
               Users List
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/dashboard_admin/add_user">
               <span data-feather="users"></span>
               Add User
             </a>

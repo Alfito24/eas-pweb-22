@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Request as ModelsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RequestController extends Controller
 {
     public function index(){
         return view('dashboard.createrequest');
     }
-    public function listRequest($id){
-        $requests = ModelsRequest::where('student_id', $id)->get();
-        return view('dashboard.student.listrequest', compact('requests'));
+    public function listRequest(Request $request, $id){
+        $path = Storage::url($request->file);
+        $requests = ModelsRequest::where('user_id', $id)->get();
+        return view('dashboard.student.listrequest', compact('requests', 'path'));
     }
     public function store(Request $request){
         $file = $request->file('file');
@@ -24,9 +26,9 @@ class RequestController extends Controller
         ModelsRequest::create([
             'title'=>$request->title,
             'file'=>$nama_file,
-            'student_id'=>Auth::id(),
+            'user_id'=>Auth::id(),
         ]);
-        return redirect('/');
+        return redirect('/dashboard_user');
     }
     public function editRequest($id){
        $request = ModelsRequest::where('id', $id)->get();

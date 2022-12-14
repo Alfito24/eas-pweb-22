@@ -4,16 +4,16 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Name</th>
+        <th scope="col">Title</th>
         <th scope="col">File</th>
       </tr>
     </thead>
     <tbody>
     @foreach ($request as $request )
       <tr>
-        <td>{{ $request->student_id }}</td>
+        <td>{{ $request->user->first_name }}</td>
         <td>
-          <img src="" alt="">
+          <a href={{ $request->file }}>Link File</a>
         </td>
       </tr>
 

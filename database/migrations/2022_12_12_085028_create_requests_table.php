@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('file')->nullable();
-            $table->foreignId('student_id');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('lecture_check')->default(true);
             $table->boolean('lecture_acceptance')->default(false);
             $table->boolean('admin_acceptance')->default(false);

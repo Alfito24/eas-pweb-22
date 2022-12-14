@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\Student;
 use App\Models\Staff;
 use App\Models\Lecture;
+use App\Models\Request;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -76,5 +77,10 @@ class User extends Authenticatable
     public function lecture()
     {
         return $this->hasOne(Lecture::class);
+    }
+
+    public function request()
+    {
+        return $this->hasMany(Request::class, 'user_id', 'id');
     }
 }

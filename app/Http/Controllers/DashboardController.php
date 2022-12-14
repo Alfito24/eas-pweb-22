@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        $requests = ModelsRequest::all();
+        $requests = ModelsRequest::where('lecture_acceptance', true)->get();
         return view('dashboard.listrequest', compact('requests'));
     }
     public function viewRequest($id){
@@ -48,29 +48,21 @@ class DashboardController extends Controller
         $user->sex = $request->sex;
         $user->religion = $request->religion;
         $user->blood_type = $request->blood_type;
-         if($request->role == 'student'){
-            $user->isStudent = true;
-        }
-         elseif($request->role == 'admin'){
-            $user->isAdmin = true;
-        }
-         else{
-            $user->isLecture = true;
-        }
-            $user->save();
+        $user->role = $request->role;
+
          return redirect('/');
     }
     public function listUser(){
         $users = User::all();
         return view('dashboard.listUser', compact('users'));
     }
-    public function hapus($id){
-        DB::table('users')->where('id', $id)->delete();
-        return redirect('/dashboard/listuser');
+    public function editUser($id){
+        $user = User::where('id', $id)->get();
+        return view('dashboard.edituser', compact('user'));
     }
-    public function edit($id){
-       $user = User::where('id', $id)->get();
-        return view('dashboard.editUser', compact('user'));
+    public function delete($id){
+        DB::table('users')->where('id', $id)->delete();
+        return redirect('/dashboard_admin/list_user');
     }
     public function update(Request $request, $id)
     {
@@ -100,7 +92,7 @@ class DashboardController extends Controller
                 'gambar_produkMitra' => $nama_file,
             ]);
         }
-        return redirect('/dashboard/listuser');
+        return redirect('/dashboard_admin/list_user');
     }
     public function accept($id){
         ModelsRequest::where('id', $id)->update([
@@ -108,5 +100,5 @@ class DashboardController extends Controller
         ]);
         return redirect('/dashboard_admin');
     }
-   
+
 }

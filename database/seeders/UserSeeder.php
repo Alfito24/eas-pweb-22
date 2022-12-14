@@ -47,5 +47,21 @@ class UserSeeder extends Seeder
             'role'=>'admin',
             'password' => bcrypt('12345678'),
         ]);
+        User::create([
+            'first_name' => 'Fiqri',
+            'phone_number'=>'082234124224',
+            'email' => 'fiqri@gmail.com',
+            'place_of_birth'=> 'Surabaya',
+            'nik'=>'3578232412010003',
+            'unit_name'=>'DPTSI',
+            'registration_number'=>'12333',
+            'group_id'=>'1',
+            'sex'=>'M',
+            'religion'=>'Islam',
+            'blood_type'=>'O',
+            'address'=>'Surabaya',
+            'role'=>'lecture',
+            'password' => bcrypt('12345678'),
+        ]);
     }
 }
