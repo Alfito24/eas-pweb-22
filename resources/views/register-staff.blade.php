@@ -95,7 +95,6 @@
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
                         Submit
                     </button>

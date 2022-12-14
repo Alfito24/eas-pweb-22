@@ -21,6 +21,14 @@
                             @enderror
                         </label>
                     </div>
+                    <div class="mt-7">
+                        <label for="middle_name"><span class="font-semibold text-md">Middle Name</span>
+                            <input type="text" placeholder="Enter your Middle Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="middle_name">
+                            @error('middle_name')
+                            <p class="text-red-500">{{$message}}</p>
+                            @enderror
+                        </label>
+                    </div>
                     <div class="mt-5">
                         <label for="last_name"><span class="font-semibold text-md">Last Name</span>
                             <input type="text" placeholder="Enter your last Name" class="mt-2 px-3 py-2 shadow rounded-lg w-full block text-sm border-2 border-[#3166AD] " name="last_name">
